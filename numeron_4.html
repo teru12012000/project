@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href="./numeron.css">
+    <title>numeron</title>
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+  </head>
+  <body>
+    <h1>numeronで遊ぼう！！</h1>
+    <div class="ques">
+      <p class="odai">15手以内で数字を当ててみせよ!</p>
+    </div>
+    <div class="deta">
+      <input class="text" type="text" id="ans1" value="" disabled data-title="遊び方3" data-step="3" data-intro="入力した数字はここに表示される。">
+      <input class="text" type="text" id="ans2" value="" disabled>
+      <input class="text" type="text" id="ans3" value="" disabled>
+      <input class="text" type="text" id="ans4" value="" disabled><br><br>
+      <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;" data-title="遊び方1" data-step="1" data-intro="入力したい数字のボタンを1つずつ押していく。">1</button>
+      <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;">2</button>
+      <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;">3</button>
+      <button class="btn" value="4" id="4" onclick="get_num(4);document.getElementById('4').disabled=true;">4</button>
+      <button class="btn" value="5" id="5" onclick="get_num(5);document.getElementById('5').disabled=true;">5</button>
+      <button class="btn" value="6" id="6" onclick="get_num(6);document.getElementById('6').disabled=true;">6</button>
+      <button class="btn" value="7" id="7" onclick="get_num(7);document.getElementById('7').disabled=true;">7</button>
+      <button class="btn" value="8" id="8" onclick="get_num(8);document.getElementById('8').disabled=true;">8</button>
+      <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;">9</button>
+      <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない。">0</button><br><br>
+      <button class="btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す。">入力値をすべてリセット</button><br><br>
+      <button class="btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す.">解答!!</button><br><br>
+    </div>
+    <div class="process">
+      <p>経過:<br></p>
+      <p class="p4" id="p" data-title="遊び方6" data-step="6" data-intro="ここに解答した数字とヒントが出される。EATは数字と桁の位置があっているということになる。BYTEは桁の位置は間違っているが答えと同じ数字が含まれている。"></p>
+    </div>
+    <div class="intro">
+      <input type="button" value="遊び方" onclick="introJs().start();">
+    </div>
+    <script>
+        init();
+        function init()
+        {
+          count=0;
+          game_count=0;
+          EAT=0;
+          BYTE=0;
+          x=[];
+          x_ans=[];
+          pro1="";
+          print_process=document.getElementById('p');
+          for(i=0;i<4;i++)
+          {
+            if(i==0)x[i]=Math.floor(Math.random()*(9-1+1))+1;
+            else x[i]=Math.floor(Math.random()*(9+1));
+            if(i==1&&x[i]==x[i-1])i--;
+            if(i==2&&(x[i]==x[i-1]||x[i]==x[i-2]))i-=2;
+            if(i==3&&(x[i]==x[i-1]||x[i]==x[i-2]||x[i]==x[i-3]))i-=3;
+          }
+        }
+        function get_num(num)
+        {
+          if(count==0)
+          {
+            document.getElementById('ans1').value=num;
+            count++;
+            document.getElementById('0').disabled=false;
+            x_ans[0]=num;
+          }
+          else if(count==1)
+          {
+            document.getElementById('ans2').value=num;
+            count++;
+            x_ans[1]=num;
+          }
+          else if(count==2)
+          {
+            document.getElementById('ans3').value=num;
+            count++;
+            x_ans[2]=num;
+          }
+          else if(count==3)
+          {
+            document.getElementById('ans4').value=num;
+            document.getElementById('1').disabled=true;
+            document.getElementById('2').disabled=true;
+            document.getElementById('3').disabled=true;
+            document.getElementById('4').disabled=true;
+            document.getElementById('5').disabled=true;
+            document.getElementById('6').disabled=true;
+            document.getElementById('7').disabled=true;
+            document.getElementById('8').disabled=true;
+            document.getElementById('9').disabled=true;
+            document.getElementById('0').disabled=true;
+            document.getElementById('send').disabled=false;
+            x_ans[3]=num;
+          } 
+        }
+        function get_C()
+        {
+          document.getElementById('ans1').value="";
+          document.getElementById('ans2').value="";
+          document.getElementById('ans3').value="";
+          document.getElementById('ans4').value="";
+          document.getElementById('1').disabled=false;
+          document.getElementById('2').disabled=false;
+          document.getElementById('3').disabled=false;
+          document.getElementById('4').disabled=false;
+          document.getElementById('5').disabled=false;
+          document.getElementById('6').disabled=false;
+          document.getElementById('7').disabled=false;
+          document.getElementById('8').disabled=false;
+          document.getElementById('9').disabled=false;
+          document.getElementById('0').disabled=true;
+          document.getElementById('send').disabled=true;
+          count=0;
+        }
+        function get_send()
+        {
+          game_count++;
+          for(i=0;i<4;i++)
+          {
+            if(x_ans[i]==x[i])EAT++;
+            else if((i==0&&(x_ans[i]==x[i+1]||x_ans[i]==x[i+2]||x_ans[i]==x[i+3]))||(i==1&&(x_ans[i]==x[i-1]||x_ans[i]==x[i+1]||x_ans[i]==x[i+2]))||(i==2&&(x_ans[i]==x[i-1]||x_ans[i]==x[i-2]||x_ans[i]==x[i+1]))||(i==3&&(x_ans[i]==x[i-1]||x_ans[i]==x[i-2]||x_ans[i]==x[i-3])))BYTE++;
+          }
+          if(EAT==4)
+          {
+            print_process.innerHTML='';
+            window.alert('CLEAR　CONGRATURATION!!!　ANSWER='+x_ans[0]+x_ans[1]+x_ans[2]);
+            init();
+            get_C();
+          }
+          else
+          {
+            pro1+=(game_count)+'手目:　'+x_ans[0]+x_ans[1]+x_ans[2]+x_ans[3]+ "　"+(EAT)+'EAT,'+(BYTE)+'BYTE'+'<br>';
+            print_process.innerHTML=pro1;
+            EAT=0;
+            BYTE=0;
+            get_C();
+          }
+          if(EAT!=4&&game_count==15)
+          {
+            print_process.innerHTML='';
+            window.alert('GAME OVER　ANSWER='+x_ans[0]+x_ans[1]+x_ans[2]+x_ans[3]);
+            init();
+            get_C();
+          }
+        }
+    </script>
+  </body>
+</html>
