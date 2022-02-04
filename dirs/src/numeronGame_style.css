@@ -1,0 +1,256 @@
+/* numeron_style.css */
+@charset "UTF-8";
+@media screen and (max-width:600px) {
+ 
+	/* 画面サイズが500px以下の場合ここの記述が適用される */
+  .fas {
+    font-size:100% !important;
+  }
+  body {
+    size: 100% !important;
+  }
+  h1{
+    font-size: 150% !important;
+  }
+  #head {
+    font-size: 250% !important;
+  }
+  div.ques {
+    padding: 7% !important;
+  }
+  div.ques p {
+    font-size: 90% !important;
+    width: 100% !important;
+  }
+  .text{
+    padding: 3% !important;
+  }
+  .btn {
+    padding: 2% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+  p.p {
+    font-size: 16px !important;
+    padding: 10px 30px !important;
+  }
+  footer {
+    font-size: 35% !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  background-color: #008080;
+}
+.back{
+  padding: 10px 0px;
+  background-color: #00dada;
+  width: 100%;
+  text-align: right;
+}
+.fas {
+  font-size: 45px;
+  color: #333333;
+  text-decoration: none;
+  padding-right: 20px;
+}
+
+h1{
+  text-align: center;
+  margin: 0;
+  font-size: 250%;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #333333 ;
+  background-color: #00cccc;
+  animation-delay: 1.2s;
+  padding-top: 10px;;
+  /* position: relative;
+  left: 100px; */
+}
+#head {
+  text-align: center;
+  margin: 0;
+  font-size: 600%;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  animation-delay: 1.0s;
+  /* position: relative;
+  left: 100px; */
+}
+div.ques{
+  text-align: center;
+  padding: 40px;
+  background-color: #00cccc;
+  animation-delay: 0.3s;
+  /* margin-right: 530px; */
+
+}
+div.ques p{
+  margin: 0; 
+  padding: 0;
+  color: #4b4b4b;
+  font-size: 180%;
+}
+div.ques p strong{
+  color: #333333;
+  font-size: larger;
+  animation-delay: 0.7s;
+}
+div.deta{
+  padding-top: 30px;
+  text-align: center;
+  background-color: #009999;
+}
+
+input.text {
+  width: 45px;
+  height: 50px;
+  padding: 30px;
+  padding-left: 35px;
+  border-radius: 3px;
+  border: 3px solid #ffe799;
+  font-size: 70px;
+  animation-delay: 1s;
+}
+
+button.btn{
+  margin: 2em 0;
+  color: #333333;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: #ffdb66 ;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 9px;
+  width: 30px;
+  padding: 30px;
+  padding-right: 40px;
+  font-size: 20px;
+  transition-duration: 1.2s;
+}
+button.section {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+/* button.btn1{
+  width: 200px;
+} */
+button.btn2{
+  background: #ffcf33;
+  margin: 10px;
+  width: 110px;
+}  
+button.btn3{
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.26);
+  background: #ffc400;
+  margin: 10px;
+  width: 300px;
+  font: bold;
+  font-size: larger;
+}
+button.btn3:hover {
+  background: hsl(350, 100%, 31%);
+  color: #ffffff;
+}
+#canv {
+  text-align: center;
+}
+canvas {
+  background-color: #008080;
+  animation-duration: 0.2s;
+}
+div.process{
+  text-align: center;
+  background-color: #008080;
+  padding: 40px;
+  margin-bottom: 0px;
+  animation-delay: 3s;
+}
+.process #log{
+  text-align: center;
+  font-size: larger;
+  height: 30px;
+  margin: 30px 40% 0px 40%;
+  background-color: #ffd54a;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #333333;
+}
+p.p{
+  text-align: left;
+  margin: 0;
+  margin-bottom: 50px;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  border: solid 10px #ffd54a;
+  background-color: #ffedb4;
+  padding: 10px 10%;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 20px;
+  color: rgb(97, 97, 97);
+}
+
+footer {
+  font-size: small;
+  margin: 0;
+  padding: 10px;
+  background-color: #006d6d;
+  height: 100%;
+}
+footer p{
+  padding-top: 30px;
+  text-align: start;
+  color: rgb(172, 172, 172);
+}
+/* p.p4{
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  border: solid;
+} */
+/* input.pro{
+  width: 15cm;
+  height: 10cm;
+} */
+
+.fadeUpAnime {
+  animation-name: fadeUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideAnime {
+  animation-name: slideAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-timing-function: ease;
+}
+
+@keyframes slideAnime {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
