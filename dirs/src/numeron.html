@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>numeron_opening</title>
+    <link rel="stylesheet" href="./numeron.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@800&family=Dongle:wght@700&family=Fjalla+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <audio id="Sounds" preload="auto">
+      <source src="../se/booon.mp3" type="audio/mp3"/>
+    </audio>
+    <audio id="sound1" preload="auto">
+      <source src="../se/click.mp3" type="audio/mp3"/>
+    </audio>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="fadeAnime">NUMERON</h1>
+      <div id="video-area">
+        <video class="fadeAnime" id="video" poster="../pictures/bgimage.jpeg" webkit-playsinline playsinline muted autoplay loop>
+        <source src="../pictures/inkVideo_shortComp.mp4" type="video/mp4">
+        <p>back-ground video couldn't be loaded.</p>
+        </video>
+      </div>
+    </header>
+    <div id="icons">
+      <a href="./numeron_level3.html" class="btn fas fa-dice-three fadeAnime" alt="standerd" onclick="audioPlay();"></a>
+      <a href="./numeron_level4.html" class="btn fas fa-dice-four fadeAnime" alt="difficult" onclick="audioPlay();"></a>
+    </div>
+    <footer id="cright" style="font-size: small; color: rgb(105, 105, 105);">
+      <p>
+        Copy right©︎ 2022<br>
+         <strong>Sion Terunaga / Manato Yamashita</strong> &nbsp; All right reserved.
+      </p>
+    </footer>
+  </body>
+  <script>
+    Window.onload = function() {
+    let el = document.getElementById("Sounds");
+    el.play();
+    };
+  // var dicering = document.getElementById("DiceSound");
+  // dicering.volume = 0.1;
+  function audioPlay() {
+    let el = document.getElementById("sound1");
+    el.play();
+  };
+</script>
+</html>
