@@ -45,6 +45,9 @@
       <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;"><section>9</section></button>
       <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない。">0</button>
       <button class="btn btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す。">reset</button><br>
+    </div>
+    <div class="sendanswer">
+      <button class="btn btn3" value="" id="another" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す.<br>ゲーム終了後に新しくゲームを続けるときも同様.">Anothre game!</button><br><br>
       <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す.">confirm!</button><br><br>
     </div>
     <div class="process fadeUpAnime" id="draw">
@@ -60,25 +63,7 @@
     
     <script>
         init();
-        function init()
-        {
-          count=0;
-          game_count=0;
-          EAT=0;
-          BYTE=0;
-          x=[];
-          x_ans=[];
-          pro1="";
-          print_process=document.getElementById('p');
-          for(i=0;i<4;i++)
-          {
-            if(i==0)x[i]=Math.floor(Math.random()*(9-1+1))+1;
-            else x[i]=Math.floor(Math.random()*(9+1));
-            if(i==1&&x[i]==x[i-1])i--;
-            if(i==2&&(x[i]==x[i-1]||x[i]==x[i-2]))i-=2;
-            if(i==3&&(x[i]==x[i-1]||x[i]==x[i-2]||x[i]==x[i-3]))i-=3;
-          }
-        }
+        
         function get_num(num)
         {
           let aud = document.getElementById("audio1")
@@ -121,25 +106,7 @@
             x_ans[3]=num;
           } 
         }
-        function get_C()
-        {
-          document.getElementById('ans1').value="";
-          document.getElementById('ans2').value="";
-          document.getElementById('ans3').value="";
-          document.getElementById('ans4').value="";
-          document.getElementById('1').disabled=false;
-          document.getElementById('2').disabled=false;
-          document.getElementById('3').disabled=false;
-          document.getElementById('4').disabled=false;
-          document.getElementById('5').disabled=false;
-          document.getElementById('6').disabled=false;
-          document.getElementById('7').disabled=false;
-          document.getElementById('8').disabled=false;
-          document.getElementById('9').disabled=false;
-          document.getElementById('0').disabled=true;
-          document.getElementById('send').disabled=true;
-          count=0;
-        }
+        
         function get_send()
         {
           document.getElementById("audio2").play();
@@ -164,11 +131,6 @@
             context.strokeStyle = 'red';
             context.lineWidth = 30;
             context.stroke();
-
-            print_process.innerHTML='';
-            //window.alert('CLEAR　CONGRATURATION!!!　ANSWER='+x_ans[0]+x_ans[1]+x_ans[2]+x_ans[3]);
-            init();
-            get_C();
           }
           else
           {
@@ -192,11 +154,48 @@
             context.fillStyle = 'blue';
             context.lineWidth = 50;
             context.fillText("X", 52, 200);
-
-            print_process.innerHTML='';
-            window.alert('GAME OVER　ANSWER='+x_ans[0]+x_ans[1]+x_ans[2]+x_ans[3]);
-            init();
-            get_C();
+          }
+        }
+        function reset()
+        {
+          window.location.reload();
+        }
+        function get_C()
+        {
+          document.getElementById('ans1').value="";
+          document.getElementById('ans2').value="";
+          document.getElementById('ans3').value="";
+          document.getElementById('ans4').value="";
+          document.getElementById('1').disabled=false;
+          document.getElementById('2').disabled=false;
+          document.getElementById('3').disabled=false;
+          document.getElementById('4').disabled=false;
+          document.getElementById('5').disabled=false;
+          document.getElementById('6').disabled=false;
+          document.getElementById('7').disabled=false;
+          document.getElementById('8').disabled=false;
+          document.getElementById('9').disabled=false;
+          document.getElementById('0').disabled=true;
+          document.getElementById('send').disabled=true;
+          count=0;
+        }
+        function init()
+        {
+          count=0;
+          game_count=0;
+          EAT=0;
+          BYTE=0;
+          x=[];
+          x_ans=[];
+          pro1="";
+          print_process=document.getElementById('p');
+          for(i=0;i<4;i++)
+          {
+            if(i==0)x[i]=Math.floor(Math.random()*(9-1+1))+1;
+            else x[i]=Math.floor(Math.random()*(9+1));
+            if(i==1&&x[i]==x[i-1])i--;
+            if(i==2&&(x[i]==x[i-1]||x[i]==x[i-2]))i-=2;
+            if(i==3&&(x[i]==x[i-1]||x[i]==x[i-2]||x[i]==x[i-3]))i-=3;
           }
         }
     </script>
