@@ -19,6 +19,7 @@
    </head>
   <body>
     <header class="back slideAnime">
+      <i class="reload blue" onclick="window.location.reload();"></i>
       <i class="intro fas fa-question-circle" alt="how to play" onclick="introJs().start();"></i>
       <a href="./numeron.html" class="btn4 fas fa-home" alt="to opening page"></a>
       <a href="./numeron_level4.html" class="btn4 fas fa-dice-four" alt="4 numbers"></a>
@@ -114,7 +115,7 @@
           if(EAT==3)
           {
             document.getElementById("audio3").play();
-
+            document.getElementById('send').disabled=true;
             // 紅丸を描画
             let drawPoint = document.getElementById("draw");
             let draw = drawPoint.insertAdjacentHTML('beforebegin', '<div id="canv"><canvas class="fadeUpAnime" id="canvas" width="230" height="230"></canvas></div>');
@@ -125,7 +126,8 @@
             context.strokeStyle = 'red';
             context.lineWidth = 30;
             context.stroke();
-            
+            jud=true;
+            setTimeout('replay_OK()',2000);
           }
           else
           {            
@@ -138,7 +140,7 @@
           if(EAT!=3&&game_count==10)
           {
             document.getElementById("audio4").play();
-
+            document.getElementById('send').disabled=true;
             // バツを描画
             let drawPoint = document.getElementById("draw");
             let draw = drawPoint.insertAdjacentHTML('beforebegin', '<div id="canv"><canvas class="fadeUpAnime" id="canvas" width="230" height="230"></canvas></div>');
@@ -149,10 +151,22 @@
             context.fillStyle = 'blue';
             context.lineWidth = 50;
             context.fillText("X", 52, 200);
+            jud=false;
+            setTimeout('replay_NO()',2000);
           }
         }
         function reset()
         {
+          window.location.reload();
+        }
+        function replay_OK()
+        {
+          window.alert("おめでとうございます.\nOKを押すと新しいゲームが始まります.");
+          window.location.reload();
+        }
+        function replay_NO()
+        {
+          window.alert("残念でした.\n次頑張ってください.\nOKを押すと新しいゲームが始まります.");
           window.location.reload();
         }
         function get_C()//全てクリアにするときの処理
@@ -181,6 +195,7 @@
           BYTE=0;
           x=[];
           x_ans=[];
+          jud=false;
           pro1="";
           print_process=document.getElementById('p');
           for(i=0;i<3;i++)

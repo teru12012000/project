@@ -110,7 +110,6 @@
         function get_send()
         {
           document.getElementById("audio2").play();
-
           game_count++;
           for(i=0;i<4;i++)
           {
@@ -120,6 +119,7 @@
           if(EAT==4)
           {
             document.getElementById("audio3").play();
+            document.getElementById('send').disabled=true;
 
             // 紅丸を描画
             let drawPoint = document.getElementById("draw");
@@ -131,6 +131,7 @@
             context.strokeStyle = 'red';
             context.lineWidth = 30;
             context.stroke();
+            setTimeout('replay_OK()',2000);
           }
           else
           {
@@ -154,10 +155,21 @@
             context.fillStyle = 'blue';
             context.lineWidth = 50;
             context.fillText("X", 52, 200);
+            setTimeout('replay_NO()',2000);
           }
         }
         function reset()
         {
+          window.location.reload();
+        }
+        function replay_OK()
+        {
+          window.alert("おめでとうございます.\nOKを押すと新しいゲームが始まります.");
+          window.location.reload();
+        }
+        function replay_NO()
+        {
+          window.alert("残念でした.\n次頑張ってください.\nOKを押すと新しいゲームが始まります.");
           window.location.reload();
         }
         function get_C()
