@@ -17,11 +17,11 @@
     <audio id="audio3" src="../se/tenton.mp3" preload="auto" type="audio/mp3"></audio>
     <audio id="audio4" src="../se/powoon.mp3" preload="auto" type="audio/mp3"></audio>
   </head>
-  <body>
+  <body onload="setTimeout('start()',1500);">
     <header class="back fadeUpAnime">
-      <i class="intro fas fa-question-circle" alt="how to play" onclick="introJs().start();"></i>
-      <a href="./numeron.html" class="btn4 fas fa-home" alt="to opening page"></a>
-      <a href="./numeron_level3.html" class="btn4 fas fa-dice-three" alt="3 numbers"></a>
+      <i class="intro fas fa-question-circle" alt="how to play" onclick="introJs().start();" title="遊び方"></i>
+      <a href="./numeron.html" class="btn4 fas fa-home" alt="to opening page" title="オープニングに戻る"></a>
+      <a href="./numeron_level3.html" class="btn4 fas fa-dice-three" alt="3 numbers" title="3桁にする"></a>
     </header>
     <h1 class="fadeUpAnime">Let's play with </h1>
     <h1 id="head" class="fadeUpAnime">NUMERON!!!!</h1>
@@ -34,25 +34,25 @@
       <input class="text" type="text" id="ans2" value="" disabled>
       <input class="text" type="text" id="ans3" value="" disabled>
       <input class="text" type="text" id="ans4" value="" disabled><br><br>
-      <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;" data-title="遊び方1" data-step="1" data-intro="入力したい数字のボタンを1つずつ押していく。"><section>1</section></button>
-      <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;"><section>2</section></button>
-      <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;"><section>3</section></button>
-      <button class="btn" value="4" id="4" onclick="get_num(4);document.getElementById('4').disabled=true;"><section>4</section></button>
-      <button class="btn" value="5" id="5" onclick="get_num(5);document.getElementById('5').disabled=true;"><section>5</section></button>
-      <button class="btn" value="6" id="6" onclick="get_num(6);document.getElementById('6').disabled=true;"><section>6</section></button>
-      <button class="btn" value="7" id="7" onclick="get_num(7);document.getElementById('7').disabled=true;"><section>7</section></button>
-      <button class="btn" value="8" id="8" onclick="get_num(8);document.getElementById('8').disabled=true;"><section>8</section></button>
-      <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;"><section>9</section></button>
-      <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない。">0</button>
-      <button class="btn btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す。">reset</button><br>
+      <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;" data-title="遊び方1" data-intro="入力したい数字のボタンを1つずつ押していく.<br>なお,同じ数字を2回使ってはいけない." title="1"><section>1</section></button>
+      <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;" title="2"><section>2</section></button>
+      <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;" title="3"><section>3</section></button>
+      <button class="btn" value="4" id="4" onclick="get_num(4);document.getElementById('4').disabled=true;" title="4"><section>4</section></button>
+      <button class="btn" value="5" id="5" onclick="get_num(5);document.getElementById('5').disabled=true;" title="5"><section>5</section></button>
+      <button class="btn" value="6" id="6" onclick="get_num(6);document.getElementById('6').disabled=true;" title="6"><section>6</section></button>
+      <button class="btn" value="7" id="7" onclick="get_num(7);document.getElementById('7').disabled=true;" title="7"><section>7</section></button>
+      <button class="btn" value="8" id="8" onclick="get_num(8);document.getElementById('8').disabled=true;" title="8"><section>8</section></button>
+      <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;" title="9"><section>9</section></button>
+      <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない。" title="0">0</button>
+      <button class="btn btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す." title="入力をリセット">reset</button><br>
     </div>
     <div class="sendanswer">
-      <button class="btn btn3" value="" id="another" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す.<br>ゲーム終了後に新しくゲームを続けるときも同様.">another game!</button><br><br>
-      <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す.">confirm!</button><br><br>
+      <button class="btn btn3" value="" id="another" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す." >another game!</button><br><br>
+      <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す." title="回答を送信">confirm!</button><br><br>
     </div>
     <div class="process fadeUpAnime" id="draw">
       <p id="log">log:<br></p>
-      <p class="p" id="p" data-title="遊び方6" data-step="6" data-intro="ここに解答した数字とヒントが出される。EATは数字と桁の位置があっているということになる。BYTEは桁の位置は間違っているが答えと同じ数字が含まれている。"></p>
+      <p class="p" id="p" data-title="遊び方6" data-step="6" data-intro="ここに解答した数字とヒントが出される.<br>EATは数字と桁の位置があっているということになる.<br>BYTEは桁の位置は間違っているが答えと同じ数字が含まれている."></p>
     </div>
     <footer id="cright">
       <p>
@@ -63,7 +63,10 @@
     
     <script>
         init();
-        
+        function start()
+        {
+          introJs().start();
+        }
         function get_num(num)
         {
           let aud = document.getElementById("audio1")
