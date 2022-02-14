@@ -33,22 +33,23 @@
       <input class="text" type="text" id="ans1" value="" disabled data-title="遊び方3" data-step="3" data-intro="入力した数字はここに表示される。">
       <input class="text" type="text" id="ans2" value="" disabled>
       <input class="text" type="text" id="ans3" value="" disabled>
-      <input class="text" type="text" id="ans4" value="" disabled><br><br>
-      <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;" data-title="遊び方1" data-intro="入力したい数字のボタンを1つずつ押していく.<br>なお,同じ数字を2回使ってはいけない." title="1"><section>1</section></button>
-      <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;" title="2"><section>2</section></button>
-      <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;" title="3"><section>3</section></button>
-      <button class="btn" value="4" id="4" onclick="get_num(4);document.getElementById('4').disabled=true;" title="4"><section>4</section></button>
-      <button class="btn" value="5" id="5" onclick="get_num(5);document.getElementById('5').disabled=true;" title="5"><section>5</section></button>
-      <button class="btn" value="6" id="6" onclick="get_num(6);document.getElementById('6').disabled=true;" title="6"><section>6</section></button>
-      <button class="btn" value="7" id="7" onclick="get_num(7);document.getElementById('7').disabled=true;" title="7"><section>7</section></button>
-      <button class="btn" value="8" id="8" onclick="get_num(8);document.getElementById('8').disabled=true;" title="8"><section>8</section></button>
-      <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;" title="9"><section>9</section></button>
-      <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない。" title="0">0</button>
+      <input class="text" type="text" id="ans4" value="" disabled>
+      <br><br>
+      <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;document.getElementById('1').title='二回同じ数字は使えません';" data-title="遊び方1" data-step="1" data-intro="入力したい数字のボタンを1つずつ押していく.<br>なお,同じ数字を2回使ってはいけない." title="1"><section>1</section></button>
+      <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;document.getElementById('2').title='二回同じ数字は使えません';" title="2"><section>2</section></button>
+      <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;document.getElementById('3').title='二回同じ数字は使えません';" title="3"><section>3</section></button>
+      <button class="btn" value="4" id="4" onclick="get_num(4);document.getElementById('4').disabled=true;document.getElementById('4').title='二回同じ数字は使えません';" title="4"><section>4</section></button>
+      <button class="btn" value="5" id="5" onclick="get_num(5);document.getElementById('5').disabled=true;document.getElementById('5').title='二回同じ数字は使えません';" title="5"><section>5</section></button>
+      <button class="btn" value="6" id="6" onclick="get_num(6);document.getElementById('6').disabled=true;document.getElementById('6').title='二回同じ数字は使えません';" title="6"><section>6</section></button>
+      <button class="btn" value="7" id="7" onclick="get_num(7);document.getElementById('7').disabled=true;document.getElementById('7').title='二回同じ数字は使えません';" title="7"><section>7</section></button>
+      <button class="btn" value="8" id="8" onclick="get_num(8);document.getElementById('8').disabled=true;document.getElementById('8').title='二回同じ数字は使えません';" title="8"><section>8</section></button>
+      <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;document.getElementById('9').title='二回同じ数字は使えません';" title="9"><section>9</section></button>
+      <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;document.getElementById('0').title='二回同じ数字は使えません';" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない." title="0は1桁目に入力できない">0</button>
       <button class="btn btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す." title="入力をリセット">reset</button><br>
     </div>
     <div class="sendanswer">
       <button class="btn btn3" value="" id="another" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す." >another game!</button><br><br>
-      <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す." title="回答を送信">confirm!</button><br><br>
+      <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す." title="4桁の数字を入力してください">confirm!</button><br><br>
     </div>
     <div class="process fadeUpAnime" id="draw">
       <p id="log">log:<br></p>
@@ -78,6 +79,7 @@
             document.getElementById('ans1').value=num;
             count++;
             document.getElementById('0').disabled=false;
+            document.getElementById('0').title='0';
             x_ans[0]=num;
           }
           else if(count==1)
@@ -106,6 +108,7 @@
             document.getElementById('9').disabled=true;
             document.getElementById('0').disabled=true;
             document.getElementById('send').disabled=false;
+            document.getElementById('send').title='回答を送信';
             x_ans[3]=num;
           } 
         }
@@ -182,16 +185,27 @@
           document.getElementById('ans3').value="";
           document.getElementById('ans4').value="";
           document.getElementById('1').disabled=false;
+          document.getElementById('1').title='1';
           document.getElementById('2').disabled=false;
+          document.getElementById('2').title='2';
           document.getElementById('3').disabled=false;
+          document.getElementById('3').title='3';
           document.getElementById('4').disabled=false;
+          document.getElementById('4').title='4';
           document.getElementById('5').disabled=false;
+          document.getElementById('5').title='5';
           document.getElementById('6').disabled=false;
+          document.getElementById('6').title='6';
           document.getElementById('7').disabled=false;
+          document.getElementById('7').title='7';
           document.getElementById('8').disabled=false;
+          document.getElementById('8').title='8';
           document.getElementById('9').disabled=false;
+          document.getElementById('9').title='9';
           document.getElementById('0').disabled=true;
           document.getElementById('send').disabled=true;
+          document.getElementById('send').title='4桁の数字を入力してください.';
+          document.getElementById('0').title="0は1桁目に入力できない";
           count=0;
         }
         function init()
