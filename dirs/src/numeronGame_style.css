@@ -102,7 +102,10 @@ div.deta{
   text-align: center;
   background-color: #009999;
 }
-
+div.sendanswer{
+  text-align: center;
+  background-color: #009999;
+}
 input.text {
   width: 45px;
   height: 50px;
@@ -144,7 +147,8 @@ button.btn2{
   background: #ffcf33;
   margin: 10px;
   width: 110px;
-}  
+}
+  
 button.btn3{
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.26);
   background: #ffc400;
@@ -152,6 +156,7 @@ button.btn3{
   width: 300px;
   font: bold;
   font-size: larger;
+  text-align: center;
 }
 button.btn3:hover {
   background: hsl(350, 100%, 31%);
