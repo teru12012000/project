@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@800&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fd20f9d661.js" crossorigin="anonymous"></script>
     <audio id="audio1" src="../se/click.mp3" preload="auto" type="audio/mp3"></audio>
     <audio id="audio2" src="../se/pipo.mp3" preload="auto" type="audio/mp3"></audio>
     <audio id="audio3" src="../se/tenton.mp3" preload="auto" type="audio/mp3"></audio>
@@ -19,9 +20,10 @@
    </head>
   <body onload="setTimeout('start()',1500);">
     <header class="back slideAnime">
+      <i class="intro fa-solid fa-rotate-right fas fa-redo-alt" alt="retry" id="anothre" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す."></i>
       <i class="intro fas fa-question-circle" alt="how to play" onclick="introJs().start();" title="遊び方"></i>
-      <a href="./numeron.html" class="btn4 fas fa-home" alt="to opening page" title="オープニングに戻る"></a>
-      <a href="./numeron_level4.html" class="btn4 fas fa-dice-four" alt="4 numbers" title="4桁にする"></a>
+      <a href="./numeron.html" class="fas fa-home" alt="to opening page" title="オープニングに戻る"></a>
+      <a href="./numeron_level4.html" class="fas fa-dice-four" alt="4 numbers" title="4桁にする"></a>
     </header>
     <h1 class="fadeUpAnime">Let's play with </h1>
     <h1 id="head" class="fadeUpAnime">NUMERON!!!</h1>
@@ -46,7 +48,6 @@
       <button class="btn btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す." title="入力をリセット"><section>reset</section></button>
     </div>
     <div class="sendanswer">
-      <button class="btn btn3" value="" id="anothre" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す.">another game!</button><br><br>
       <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す." title="3桁の数字を入力してください.">confirm!</button><br><br>
     </div>
     <div class="process fadeUpAnime" id="draw">
