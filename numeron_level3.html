@@ -74,7 +74,7 @@
           aud.currentTime = 0;
           aud.play();
 
-          if(count===0)
+          if(count==0)
           {
             document.getElementById('ans1').value=num;
             count++;
@@ -82,13 +82,13 @@
             document.getElementById('0').title='0';
             x_ans[0]=num;
           }
-          else if(count===1)
+          else if(count==1)
           {
             document.getElementById('ans2').value=num;
             count++;
             x_ans[1]=num;
           }
-          else if(count===2)
+          else if(count==2)
           {
             document.getElementById('ans3').value=num;
             document.getElementById('1').disabled=true;
@@ -114,10 +114,10 @@
           game_count++;
           for(i=0;i<3;i++)
           {
-            if(x_ans[i]===x[i])EAT++;
-            else if((i===0&&(x_ans[i]===x[i+1]||x_ans[i]===x[i+2]))||(i===1&&(x_ans[i]===x[i-1]||x_ans[i]===x[i+1]))||(i===2&&(x_ans[i]===x[i-1]||x_ans[i]===x[i-2])))BYTE++;
+            if(x_ans[i]==x[i])EAT++;
+            else if((i==0&&(x_ans[i]==x[i+1]||x_ans[i]==x[i+2]))||(i==1&&(x_ans[i]==x[i-1]||x_ans[i]==x[i+1]))||(i==2&&(x_ans[i]==x[i-1]||x_ans[i]==x[i-2])))BYTE++;
           }
-          if(EAT===3)
+          if(EAT==3)
           {
             document.getElementById("audio3").play();
             document.getElementById('send').disabled=true;
@@ -142,7 +142,7 @@
             BYTE=0;
             get_C();
           }
-          if(EAT!==3&&game_count===10)
+          if(EAT!=3&&game_count==10)
           {
             document.getElementById("audio4").play();
             document.getElementById('send').disabled=true;
@@ -216,10 +216,10 @@
           print_process=document.getElementById('p');
           for(i=0;i<3;i++)
           {
-            if(i===0)x[i]=Math.floor(Math.random()*(9-1+1))+1;
+            if(i==0)x[i]=Math.floor(Math.random()*(9-1+1))+1;
             else x[i]=Math.floor(Math.random()*(9+1));
-            if(i===1&&x[i]===x[i-1])i--;  
-            if(i===2&&(x[i]===x[i-1]||x[i]===x[i-2]))i-=2;
+            if(i==1&&x[i]==x[i-1])i--;  
+            if(i==2&&(x[i]==x[i-1]||x[i]==x[i-2]))i-=2;
           }
         }
     </script>
