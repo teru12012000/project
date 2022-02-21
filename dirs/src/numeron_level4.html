@@ -22,8 +22,8 @@
     <header class="back fadeUpAnime">
       <i class="intro fa-solid fa-rotate-right fas fa-redo-alt" alt="retry" id="anothre" onclick="reset();" data-title="遊び方7" data-step="7" data-intro="ゲームを中断しリセットしたいときにはここのボタンを押す."></i>
       <i class="intro fas fa-question-circle" alt="how to play" onclick="introJs().start();" title="遊び方"></i>
-      <a href="./numeron.html" class="btn4 fas fa-home" alt="to opening page" title="オープニングに戻る"></a>
-      <a href="./numeron_level3.html" class="btn4 fas fa-dice-three" alt="3 numbers" title="3桁にする"></a>
+      <a href="./numeron.html" class="btn4 fas fa-home" alt="to opening page" title="オープニングに戻る" target="_blank"></a>
+      <a href="./numeron_level3.html" class="btn4 fas fa-dice-three" alt="3 numbers" title="3桁にする" target="_blank"></a>
     </header>
     <h1 class="fadeUpAnime">Let's play with </h1>
     <h1 id="head" class="fadeUpAnime">NUMERON!!!!</h1>
@@ -68,7 +68,14 @@
         init();
         function start()
         {
-          introJs().start();
+          const keyName = 'visited';
+          const keyValue = true;
+          if (!sessionStorage.getItem(keyName)) 
+          {
+            //sessionStorageにキーと値を追加
+            sessionStorage.setItem(keyName, keyValue);
+            introJs().start();
+          }       
         }
         function get_num(num)
         {
