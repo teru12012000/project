@@ -65,7 +65,7 @@ h1{
   color: #333333 ;
   background-color: #00cccc;
   animation-delay: 1.2s;
-  padding-top: 10px;;
+  padding-top: 0px;;
   /* position: relative;
   left: 100px; */
 }
@@ -80,7 +80,7 @@ h1{
 }
 div.ques{
   text-align: center;
-  padding: 40px;
+  padding: 0;
   background-color: #00cccc;
   animation-delay: 0.3s;
   /* margin-right: 530px; */
@@ -98,7 +98,7 @@ div.ques p strong{
   animation-delay: 0.7s;
 }
 div.deta{
-  padding-top: 30px;
+  padding-top: 10px;
   text-align: center;
   background-color: #009999;
 }
@@ -107,8 +107,8 @@ div.sendanswer{
   background-color: #009999;
 }
 input.text {
-  width: 45px;
-  height: 50px;
+  width: 35px;
+  height: 40px;
   padding: 30px;
   padding-left: 35px;
   border-radius: 3px;
@@ -145,7 +145,7 @@ button.section {
 } */
 button.btn2{
   background: #ffcf33;
-  margin: 10px;
+  margin: 0px;
   width: 110px;
 }
   
@@ -153,7 +153,7 @@ button.btn3{
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.26);
   background: #ffc400;
   margin: 10px;
-  width: 300px;
+  width: 150px;
   font: bold;
   font-size: larger;
   text-align: center;
@@ -172,7 +172,7 @@ canvas {
 div.process{
   text-align: center;
   background-color: #008080;
-  padding: 40px;
+  padding: 0px;
   margin-bottom: 0px;
   animation-delay: 3s;
 }
@@ -180,35 +180,37 @@ div.process{
   text-align: center;
   font-size: larger;
   height: 30px;
-  margin: 30px 40% 0px 40%;
+  margin: 20px 40% 0px 40%;
   background-color: #ffd54a;
   font-family: 'Be Vietnam Pro', sans-serif;
   color: #333333;
 }
 p.p{
-  text-align: left;
+  text-align: center;
   margin: 0;
   margin-bottom: 50px;
-  width: auto;
-  height: auto;
+  width: 400px;
+  height: 250px;
   display: inline-block;
   border: solid 10px #ffd54a;
   background-color: #ffedb4;
-  padding: 10px 10%;
+  padding: 5px 10%;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 20px;
   color: rgb(97, 97, 97);
+  height: 150px;
+  overflow: auto;
 }
 
 footer {
   font-size: small;
   margin: 0;
-  padding: 10px;
+  padding: 5px;
   background-color: #006d6d;
   height: 100%;
 }
 footer p{
-  padding-top: 30px;
+  padding-top: 0px;
   text-align: start;
   color: rgb(172, 172, 172);
 }
