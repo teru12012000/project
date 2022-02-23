@@ -31,7 +31,7 @@
       <p class="odai">Can you identify numbers within <strong>15</strong> moves?</p>
     </div>
 
-    <div class="deta slideAnime">
+    <div class="deta slideAnime" id="draw">
       <input class="text" type="text" id="ans1" value="" disabled data-title="遊び方3" data-step="3" data-intro="入力した数字はここに表示される。">
       <input class="text" type="text" id="ans2" value="" disabled>
       <input class="text" type="text" id="ans3" value="" disabled>
@@ -53,7 +53,7 @@
 
       <button class="btn btn3" value="" id="send" onclick="get_send();" disabled data-title="遊び方5" data-step="5" data-intro="数字を入力し解答するときはこのボタンを押す." title="4桁の数字を入力してください">confirm!</button><br><br>
     </div>
-    <div class="process fadeUpAnime" id="draw">
+    <div class="process fadeUpAnime" >
       <p id="log">log:<br></p>
       <p class="p" id="p" data-title="遊び方6" data-step="6" data-intro="ここに解答した数字とヒントが出される.<br>EATは数字と桁の位置があっているということになる.<br>BYTEは桁の位置は間違っているが答えと同じ数字が含まれている."></p>
     </div>
@@ -187,8 +187,9 @@
           }
           else
           {
-            pro1+=(game_count)+'moves:　'+x_ans[0]+x_ans[1]+x_ans[2]+x_ans[3]+ "　"+(EAT)+'EAT,'+(BYTE)+'BYTE'+'<br><br>';
-            print_process.innerHTML=pro1;
+            pro1=game_count+'move:　'+x_ans[0]+x_ans[1]+x_ans[2]+x_ans[3]+'　'+EAT+'EAT,'+BYTE+'BYTE'+'<br>';
+            pro2=pro1+pro2;
+            print_process.innerHTML=pro2;
             EAT=0;
             BYTE=0;
             get_C();
@@ -292,7 +293,7 @@
           BYTE=0;
           x=[];
           x_ans=[];
-          pro1="";
+          pro2="";
           print_process=document.getElementById('p');
           for(i=0;i<4;i++)
           {
