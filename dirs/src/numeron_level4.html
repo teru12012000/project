@@ -36,7 +36,7 @@
       <input class="text" type="text" id="ans2" value="" disabled>
       <input class="text" type="text" id="ans3" value="" disabled>
       <input class="text" type="text" id="ans4" value="" disabled>
-      <br><br>
+      <br>
       <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;document.getElementById('1').title='二回同じ数字は使えません';document.getElementById('1').value='×';get_text(1);" data-title="遊び方1" data-step="1" data-intro="入力したい数字のボタンを1つずつ押していく.<br>なお,同じ数字を2回使ってはいけない." title="1"><section id="one"></section></button>
       <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;document.getElementById('2').title='二回同じ数字は使えません';document.getElementById('2').value='×';get_text(2)" title="2"><section id="two"></section></button>
       <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;document.getElementById('3').title='二回同じ数字は使えません';document.getElementById('3').value='×';get_text(3)" title="3"><section id="three"></section></button>
@@ -125,6 +125,7 @@
             count++;
             document.getElementById('0').disabled=false;
             document.getElementById('0').title='0';
+            zero.innerHTML="0";
             x_ans[0]=num;
           }
           else if(count==1)
@@ -215,12 +216,12 @@
         }
         function replay_OK()
         {
-          window.alert("おめでとうございます.\nOKを押すと新しいゲームが始まります.");
+          window.alert("おめでとうございます.\n答えは"+x+"です.\n"+game_count+"手でクリアしました.\nOKを押すと新しいゲームが始まります.");
           window.location.reload();
         }
         function replay_NO()
         {
-          window.alert("残念でした.\n次頑張ってください.\nOKを押すと新しいゲームが始まります.");
+          window.alert("残念でした.\n次頑張ってください.\n答えは"+x+"でした.\nOKを押すと新しいゲームが始まります.");
           window.location.reload();
         }
         function get_C()
@@ -270,7 +271,7 @@
           seven.innerHTML="7";
           eight.innerHTML="8";
           nine.innerHTML="9";
-          zero.innerHTML="0";
+          zero.innerHTML="×";
           count=0;
         }
         function init()
@@ -284,7 +285,7 @@
           seven.innerHTML="7";
           eight.innerHTML="8";
           nine.innerHTML="9";
-          zero.innerHTML="0";
+          zero.innerHTML="×";
           count=0;
           game_count=0;
           EAT=0;
