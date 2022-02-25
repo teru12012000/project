@@ -1,29 +1,31 @@
 /* numeron_style.css */
 @charset "UTF-8";
-@media screen and (max-width:600px) {
+@media screen and (max-width:770px) {
  
-	/* 画面サイズが500px以下の場合ここの記述が適用される */
+	/* 画面サイズが770px以下の場合ここの記述が適用される */
   .fas {
-    font-size:100% !important;
+    font-size: 100% !important;
   }
   body {
     size: 100% !important;
   }
   h1{
-    font-size: 150% !important;
+    font-size: 200% !important;
   }
   #head {
-    font-size: 250% !important;
+    font-size: 300% !important;
   }
   div.ques {
-    padding: 7% !important;
+    padding: 3% !important;
   }
   div.ques p {
     font-size: 90% !important;
     width: 100% !important;
   }
-  .text{
-    padding: 3% !important;
+  input.text {
+    font-size: 35px !important;
+    animation-delay: 1s !important;
+    padding: 10px !important;
   }
   .btn {
     padding: 2% !important;
@@ -33,6 +35,7 @@
   p.p {
     font-size: 16px !important;
     padding: 10px 30px !important;
+    width: 250px !important;
   }
   footer {
     font-size: 35% !important;
@@ -57,7 +60,7 @@ body {
   padding-right: 20px;
 }
 
-h1{
+h1 {
   text-align: center;
   margin: 0;
   font-size: 250%;
@@ -65,7 +68,7 @@ h1{
   color: #333333 ;
   background-color: #00cccc;
   animation-delay: 1.2s;
-  padding-top: 0px;;
+  padding-top: 7px;;
   /* position: relative;
   left: 100px; */
 }
@@ -80,35 +83,34 @@ h1{
 }
 div.ques{
   text-align: center;
-  padding: 0;
+  padding-bottom: 3%;
   background-color: #00cccc;
   animation-delay: 0.3s;
   /* margin-right: 530px; */
 
 }
-div.ques p{
+div.ques p {
   margin: 0; 
   padding: 0;
   color: #4b4b4b;
   font-size: 180%;
 }
-div.ques p strong{
+div.ques p strong {
   color: #333333;
   font-size: larger;
   animation-delay: 0.7s;
 }
-div.deta{
-  padding-top: 10px;
+div.deta {
+  padding-top: 15px;
   text-align: center;
   background-color: #009999;
 }
-div.sendanswer{
+div.sendanswer {
   text-align: center;
   background-color: #009999;
 }
 input.text {
   width: 35px;
-  height: 40px;
   padding: 30px;
   padding-left: 35px;
   border-radius: 3px;
@@ -118,7 +120,7 @@ input.text {
 }
 
 button.btn{
-  margin: 2em 0;
+  margin: 1.3em 0;
   color: #333333;
   font-family: 'Be Vietnam Pro', sans-serif;
   background: #ffdb66 ;
