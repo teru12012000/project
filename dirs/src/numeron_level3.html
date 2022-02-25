@@ -269,6 +269,7 @@
         }
         function init()//初期値設定
         {
+          document.addEventListener("touchmove", mobile_no_scroll, { passive: false });
           one.innerHTML="1";
           two.innerHTML="2";
           three.innerHTML="3";
@@ -297,7 +298,6 @@
             if(i===2&&(x[i]===x[i-1]||x[i]===x[i-2]))i-=2;
           }
         }
-        //test
     </script>
   </body>
 </html>
