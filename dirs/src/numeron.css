@@ -22,7 +22,7 @@
   .popup {
     width: 50% !important;
     height: 50% !important;
-    overflow: auto;
+    
   }
   .popup-inner {
     position: absolute;
@@ -133,6 +133,7 @@ footer p a {
   color: #666;
   background-color: rgb(240, 240, 240);
   z-index: 2;
+  overflow: auto;
 }
 .popup-inner img {
   width: 50%;
