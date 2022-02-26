@@ -113,9 +113,10 @@ div.sendanswer {
   background-color: #009999;
 }
 input.text {
-  width: 50px;
+  width: 45px;
+  height:45px;
   padding: 20px;
-  padding-left: 35px;
+  padding-left: 25px;
   border-radius: 3px;
   border: 3px solid #ffe799;
   font-size: 70px;
