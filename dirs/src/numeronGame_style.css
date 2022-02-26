@@ -23,9 +23,11 @@
     width: 100% !important;
   }
   input.text {
-    font-size: 35px !important;
+    font-size: 40px !important;
     animation-delay: 1s !important;
-    padding: 20px !important;
+    padding: 20px 0 !important;
+    padding-right: 3px !important;
+    padding-left: 25px !important;
   }
   .btn {
     padding: 2% !important;
