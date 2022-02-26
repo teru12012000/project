@@ -22,6 +22,7 @@
   .popup {
     width: 50% !important;
     height: 50% !important;
+    overflow: auto;
   }
   .popup-inner {
     position: absolute;
