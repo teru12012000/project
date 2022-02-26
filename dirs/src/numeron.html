@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>numeron_opening</title>
     <link rel="stylesheet" href="./numeron.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@800&family=Dongle:wght@700&family=Fjalla+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3f0abab2bc.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@800&family=Dongle:wght@700&family=Fjalla+One&display=swap" rel="stylesheet">
 
     <audio id="Sounds" preload="auto">
       <source src="../se/booon.mp3" type="audio/mp3"/>
@@ -28,14 +28,31 @@
       </div>
     </header>
     <div id="icons">
-      <a href="./numeron_level3.html" class="btn fas fa-dice-three fadeAnime" alt="standerd" onclick="audioPlay();"></a>
-      <a href="./numeron_level4.html" class="btn fas fa-dice-four fadeAnime" alt="difficult" onclick="audioPlay();"></a><br>
+      <a href="https://github.com/teru12012000/project" class="fa-brands fa-github fadeAnime" alt="github" onclick="autoPlay();"></a>
+      <a href="#" id="js-show-popup" class="btn fa-solid fa-question fadeAnime" alt="What is NUMERON?" onclick="autoPlay();"></a>
+      <a href="./numeron_level3.html" class="btn fa-solid fa-dice-three fadeAnime" alt="standerd" onclick="audioPlay();"></a>
+      <a href="./numeron_level4.html" class="btn fa-solid fa-dice-four fadeAnime" alt="difficult" onclick="audioPlay();"></a><br>
     </div>
     
+    <div class="popup" id="js-popup">
+      <div class="popup-inner">
+        <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+          <h2>NUMERONとは数当てゲームです。</h2>
+            <p>ランダムで決められた3桁の番号を予想し、決められた手数で当ててください。
+            <br>数字と桁が合っていた場合は「EAT」（イート）、数字は合っているが桁は合っていない場合は「BITE」（バイト）と表示されます。</p>
+            <p>例として番号が「765」、あなたが入力した番号が「746」であった場合は、3桁のうち「7」は桁の位置が合致しているためEAT、
+              「6」は数字自体は合っているが桁の位置が違うためBITE。EATが1つ・BITEが1つなので、「1EAT 1BITE」と表示されます。</p>
+            <p>まずは、<a href="./numeron_level3.html" class="btn fa-solid fa-dice-three fadeAnime" alt="standerd" onclick="audioPlay();" style="color: gray;"></a> のボタンを押してみてください。</p>
+        <a href="./numeron_level3.html"><img src="../pictures/knowledge.jpeg" alt="Image of knowledge"></a>
+      </div>
+      <div class="black-background" id="js-black-bg"></div>
+    </div>
+
     <footer id="cright" style="font-size: small; color: rgb(105, 105, 105);">
       <p>
-        Copy right©︎ 2022<br>
-         <strong>Sion Terunaga / Manato Yamashita</strong> &nbsp; All right reserved.
+        <br>Copy right©︎ 2022<br>
+         <strong><a href="https://github.com/teru12012000" alt="teru's github account">Sion Terunaga</a></strong>
+          / <strong><a href="https://github.com/ManatoYamashita" alt="mana's github account">Manato Yamashita</a></strong> &nbsp; All right reserved.
       </p>
     </footer>
   </body>
@@ -50,6 +67,26 @@
       let el = document.getElementById("sound1");
       el.play();
     };
+
+    function popupImage() {
+      var popup = document.getElementById('js-popup');
+      if(!popup) return;
+
+      var blackBg = document.getElementById('js-black-bg');
+      var closeBtn = document.getElementById('js-close-btn');
+      var showBtn = document.getElementById('js-show-popup');
+
+      closePopUp(blackBg);
+      closePopUp(closeBtn);
+      closePopUp(showBtn);
+      function closePopUp(elem) {
+        if(!elem) return;
+          elem.addEventListener('click', function() {
+            popup.classList.toggle('is-show');
+          });
+        }
+    }
+popupImage();
 </script>
 <!-- 2/15: git test. -->
 </html>
