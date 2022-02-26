@@ -107,7 +107,7 @@ footer p a {
 
 /* contents of pop-up window */
 .popup {
-  position: fixed;
+  position: center;
   left: 0;
   top: 0;
   width: 100%;
@@ -133,6 +133,7 @@ footer p a {
   color: #666;
   background-color: rgb(240, 240, 240);
   z-index: 2;
+  overflow-y: scroll;
 }
 .popup-inner img {
   width: 50%;
