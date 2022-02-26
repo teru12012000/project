@@ -107,7 +107,6 @@ footer p a {
 
 /* contents of pop-up window */
 .popup {
-  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -117,6 +116,7 @@ footer p a {
   visibility: hidden;
   transition: .6s;
 }
+/*これでうまくいった説*/
 .popup.is-show {
   opacity: 1;
   visibility: visible;
