@@ -107,7 +107,7 @@ footer p a {
 
 /* contents of pop-up window */
 .popup {
-  position: center;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
