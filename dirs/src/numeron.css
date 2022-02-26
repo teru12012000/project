@@ -25,11 +25,15 @@
   }
   .popup-inner {
     position: absolute;
-    transform: translate(-50%,-50%) !important;
-    font-size: 12px !important;
-    width: 80% !important;
-    height: 70% !important;
+    transform: translate(-10%,0%) !important;
+    font-size: 6px !important;
+    width: 100% !important;
+    height: 105% !important;
     padding: 25px !important;
+  }
+  .black-background {
+    width: 200% !important;
+    height: 200% !important;
   }
 }
 
@@ -81,6 +85,7 @@ h1 {
   top: 55%;
   left: 50%;
   transform: translateY(-55%) translateX(-50%);
+  cursor: pointer;
 }
 #icons a {
   text-decoration: none;
