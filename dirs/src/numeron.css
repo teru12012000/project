@@ -4,11 +4,17 @@
 @media screen and (max-width:600px) {
   h1 {
     font-size: 500% !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
   }
   #icons {
     top: 52%;
     left: 47%;
     transform: translateY(-52%) translateX(-45%);
+  }
+  #icons a {
+    font-size: 200% !important;
+    padding: 7px !important;
   }
   footer {
     font-size: 12px !important;
