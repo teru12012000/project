@@ -4,14 +4,32 @@
 @media screen and (max-width:600px) {
   h1 {
     font-size: 500% !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
   }
   #icons {
     top: 52%;
     left: 47%;
     transform: translateY(-52%) translateX(-45%);
   }
+  #icons a {
+    font-size: 200% !important;
+    padding: 7px !important;
+  }
   footer {
     font-size: 12px !important;
+  }
+  .popup {
+    width: 50% !important;
+    height: 50% !important;
+  }
+  .popup-inner {
+    position: absolute;
+    transform: translate(-50%,-50%) !important;
+    font-size: 12px !important;
+    width: 80% !important;
+    height: 70% !important;
+    padding: 25px !important;
   }
 }
 
