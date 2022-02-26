@@ -13,6 +13,18 @@
   footer {
     font-size: 12px !important;
   }
+  .popup {
+    width: 50% !important;
+    height: 50% !important;
+  }
+  .popup-inner {
+    position: absolute;
+    transform: translate(-50%,-50%) !important;
+    font-size: 12px !important;
+    width: 80% !important;
+    height: 70% !important;
+    padding: 25px !important;
+  }
 }
 
 html {
