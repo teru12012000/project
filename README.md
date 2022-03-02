@@ -25,3 +25,4 @@
 [NUMRON](https://teru12012000.github.io/project/dirs/src/numeron.html)
 
 ぜひ、上記リンクをクリックし遊んでみてください。
+まだまだ、ごみサイトだとは思いますがこれからもよいよいものになるように作成していきます。
