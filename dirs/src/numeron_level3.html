@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <!-- <link rel='stylesheet' href="./numeron.css"> -->
-    <link rel='stylesheet' href="./numeronGame_style.css">
+    <link rel="stylesheet" href="./numeronGame_style.css">
     <title>numeron</title>
     <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
@@ -35,16 +35,16 @@
       <input class="text" type="text" id="ans1" value="" disabled data-title="遊び方3" data-step="3" data-intro="入力した数字はここに表示される。">
       <input class="text" type="text" id="ans2" value="" disabled>
       <input class="text" type="text" id="ans3" value="" disabled><br>
-      <button class="btn" value="1" id="1" onclick="get_num(1);document.getElementById('1').disabled=true;document.getElementById('1').title='二回同じ数字は使えません';document.getElementById('1').value='×';get_text(1);" data-title="遊び方1" data-step="1" data-intro="入力したい数字のボタンを1つずつ押していく.<br>なお,同じ数字を2回使ってはいけない." title="1"><section id="one"></section></button>
-      <button class="btn" value="2" id="2" onclick="get_num(2);document.getElementById('2').disabled=true;document.getElementById('2').title='二回同じ数字は使えません';document.getElementById('2').value='×';get_text(2)" title="2"><section id="two"></section></button>
-      <button class="btn" value="3" id="3" onclick="get_num(3);document.getElementById('3').disabled=true;document.getElementById('3').title='二回同じ数字は使えません';document.getElementById('3').value='×';get_text(3)" title="3"><section id="three"></section></button>
-      <button class="btn" value="4" id="4" onclick="get_num(4);document.getElementById('4').disabled=true;document.getElementById('4').title='二回同じ数字は使えません';document.getElementById('4').value='×';get_text(4)" title="4"><section id="four"></section></button>
-      <button class="btn" value="5" id="5" onclick="get_num(5);document.getElementById('5').disabled=true;document.getElementById('5').title='二回同じ数字は使えません';document.getElementById('5').value='×';get_text(5)" title="5"><section id="five"></section></button>
-      <button class="btn" value="6" id="6" onclick="get_num(6);document.getElementById('6').disabled=true;document.getElementById('6').title='二回同じ数字は使えません';document.getElementById('6').value='×';get_text(6)" title="6"><section id="six"></section></button>
-      <button class="btn" value="7" id="7" onclick="get_num(7);document.getElementById('7').disabled=true;document.getElementById('7').title='二回同じ数字は使えません';document.getElementById('7').value='×';get_text(7)" title="7"><section id="seven"></section></button>
-      <button class="btn" value="8" id="8" onclick="get_num(8);document.getElementById('8').disabled=true;document.getElementById('8').title='二回同じ数字は使えません';document.getElementById('8').value='×';get_text(8)" title="8"><section id="eight"></section></button>
-      <button class="btn" value="9" id="9" onclick="get_num(9);document.getElementById('9').disabled=true;document.getElementById('9').title='二回同じ数字は使えません';document.getElementById('9').value='×';get_text(9)" title="9"><section id="nine"></section></button>
-      <button class="btn" value="0" id="0" onclick="get_num(0);document.getElementById('0').disabled=true;document.getElementById('0').title='二回同じ数字は使えません';document.getElementById('0').value='×';get_text(0)" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない." title="0は1桁目に入力できない"><section id="zero"></section></button>
+      <button class="btn" value="1" id="1" onclick="get_num(1);" data-title="遊び方1" data-step="1" data-intro="入力したい数字のボタンを1つずつ押していく.<br>なお,同じ数字を2回使ってはいけない." title="1"><section id="one"></section></button>
+      <button class="btn" value="2" id="2" onclick="get_num(2);" title="2"><section ></section></button>
+      <button class="btn" value="3" id="3" onclick="get_num(3);" title="3"><section ></section></button>
+      <button class="btn" value="4" id="4" onclick="get_num(4);" title="4"><section ></section></button>
+      <button class="btn" value="5" id="5" onclick="get_num(5);" title="5"><section ></section></button>
+      <button class="btn" value="6" id="6" onclick="get_num(6);" title="6"><section ></section></button>
+      <button class="btn" value="7" id="7" onclick="get_num(7);" title="7"><section ></section></button>
+      <button class="btn" value="8" id="8" onclick="get_num(8);" title="8"><section ></section></button>
+      <button class="btn" value="9" id="9" onclick="get_num(9);" title="9"><section ></section></button>
+      <button class="btn" value="0" id="0" onclick="get_num(0);" disabled data-title="遊び方2" data-step="2" data-intro="0は1桁目に入力できない." title="0は1桁目に入力できない"><section></section></button>
       <button class="btn btn2" value="" id="C" onclick="get_C()" data-title="遊び方4" data-step="4" data-intro="入力した数字をすべてリセットしたいときはこのボタンを押す." title="入力をリセット"><section>reset</section></button>
     </div>
     <div class="sendanswer">
@@ -60,243 +60,6 @@
          <strong>Sion Terunaga / Manato Yamashita</strong> &nbsp; All right reserved.
       </p>
     </footer>
-
-    <script>
-        init();
-        function get_text(num)
-        {
-          switch(num)
-          {
-            case 1:
-              one.innerHTML="×";
-              break;
-            case 2:
-              two.innerHTML="×";
-              break;
-            case 3:
-              three.innerHTML="×";
-              break;
-            case 4:
-              four.innerHTML="×";
-              break;
-            case 5:
-              five.innerHTML="×";
-              break;
-            case 6:
-              six.innerHTML="×";
-              break;
-            case 7:
-              seven.innerHTML="×";
-              break;
-            case 8:
-              eight.innerHTML="×";
-              break;
-            case 9:
-              nine.innerHTML="×";
-              break;
-            case 0:
-              zero.innerHTML="×";
-            break;
-          }
-        }
-        function start()
-        {
-          const keyName = 'visited';
-          const keyValue = true;
-          if (!sessionStorage.getItem(keyName)) 
-          {
-            //sessionStorageにキーと値を追加
-            sessionStorage.setItem(keyName, keyValue);
-            introJs().start();
-          }       
-        }
-        function get_num(num)//押したボタンの数字の値を得る
-        {
-          let aud = document.getElementById("audio1")
-          aud.currentTime = 0;
-          aud.play();
-
-          if(count===0)
-          {
-            document.getElementById('ans1').value=num;
-            count++;
-            document.getElementById('0').disabled=false;
-            document.getElementById('0').title='0';
-            zero.innerHTML="0";
-            x_ans[0]=num;
-          }
-          else if(count===1)
-          {
-            document.getElementById('ans2').value=num;
-            count++;
-            x_ans[1]=num;
-          }
-          else if(count===2)
-          {
-            document.getElementById('ans3').value=num;
-            document.getElementById('1').disabled=true;
-            document.getElementById('2').disabled=true;
-            document.getElementById('3').disabled=true;
-            document.getElementById('4').disabled=true;
-            document.getElementById('5').disabled=true;
-            document.getElementById('6').disabled=true;
-            document.getElementById('7').disabled=true;
-            document.getElementById('8').disabled=true;
-            document.getElementById('9').disabled=true;
-            document.getElementById('0').disabled=true;
-            document.getElementById('send').disabled=false;
-            document.getElementById('send').title='回答を送信';
-            x_ans[2]=num;
-          } 
-        }
-
-        function get_send()//回答を送信
-        {
-          document.getElementById("audio2").play();
-
-          game_count++;
-          for(i=0;i<3;i++)
-          {
-            if(x_ans[i]===x[i])EAT++;
-            else if((i===0&&(x_ans[i]===x[i+1]||x_ans[i]===x[i+2]))||(i===1&&(x_ans[i]===x[i-1]||x_ans[i]===x[i+1]))||(i===2&&(x_ans[i]===x[i-1]||x_ans[i]===x[i-2])))BYTE++;
-          }
-          if(EAT===3)
-          {
-            document.getElementById("audio3").play();
-            document.getElementById('send').disabled=true;
-            // 紅丸を描画
-            let drawPoint = document.getElementById("draw");
-            let draw = drawPoint.insertAdjacentHTML('beforebegin', '<div id="canv"><canvas class="fadeUpAnime" id="canvas" width="230" height="230"></canvas></div>');
-            let element = document.getElementById( "canvas" ) ;
-            let context = element.getContext( "2d" ) ;
-            context.beginPath () ;
-            context.arc( 115, 115, 75, 0 * Math.PI / 180, 360 * Math.PI / 180, false ) ;
-            context.strokeStyle = 'red';
-            context.lineWidth = 30;
-            context.stroke();
-            jud=true;
-            setTimeout('replay_OK()',2000);
-          }
-          else
-          {          
-            pro1=game_count+'move:　'+x_ans[0]+x_ans[1]+x_ans[2]+'　'+EAT+'EAT,'+BYTE+'BYTE'+'<br>';
-            pro2=pro1+pro2;
-            print_process.innerHTML=pro2;
-            EAT=0;
-            BYTE=0;
-            get_C();
-          }
-          if(EAT!==3&&game_count===10)
-          {
-            document.getElementById("audio4").play();
-            document.getElementById('send').disabled=true;
-            // バツを描画
-            let drawPoint = document.getElementById("draw");
-            let draw = drawPoint.insertAdjacentHTML('beforebegin', '<div id="canv"><canvas class="fadeUpAnime" id="canvas" width="230" height="230"></canvas></div>');
-            let element = document.getElementById( "canvas" ) ;
-            let context = element.getContext( "2d" ) ;
-            context.beginPath () ;
-            context.font = "bold 150px Anton sans-serif";
-            context.fillStyle = 'blue';
-            context.lineWidth = 50;
-            context.fillText("✕", 52, 160);
-            jud=false;
-            setTimeout('replay_NO()',2000);
-          }
-        }
-        function reset()
-        {
-          window.location.reload();
-        }
-        function replay_OK()
-        {
-          window.alert("おめでとうございます.\n答えは"+x+"です.\n"+game_count+"手でクリアしました.\nアラートを閉じると新しいゲームが始まります.");
-          window.location.reload();
-        }
-        function replay_NO()
-        {
-          window.alert("残念でした.\n次頑張ってください.\n答えは"+x+"でした.\nアラートを閉じると新しいゲームが始まります.");
-          window.location.reload();
-        }
-        function get_C()//全てクリアにするときの処理
-        {
-          document.getElementById('ans1').value="";
-          document.getElementById('ans2').value="";
-          document.getElementById('ans3').value="";
-          document.getElementById('1').disabled=false;
-          document.getElementById('1').title='1';
-          document.getElementById('2').disabled=false;
-          document.getElementById('2').title='2';
-          document.getElementById('3').disabled=false;
-          document.getElementById('3').title='3';
-          document.getElementById('4').disabled=false;
-          document.getElementById('4').title='4';
-          document.getElementById('5').disabled=false;
-          document.getElementById('5').title='5';
-          document.getElementById('6').disabled=false;
-          document.getElementById('6').title='6';
-          document.getElementById('7').disabled=false;
-          document.getElementById('7').title='7';
-          document.getElementById('8').disabled=false;
-          document.getElementById('8').title='8';
-          document.getElementById('9').disabled=false;
-          document.getElementById('9').title='9';
-          document.getElementById('0').disabled=true;
-          document.getElementById('send').disabled=true;
-          document.getElementById('send').title='3桁の数字を入力してください.';
-          document.getElementById('0').title="0は1桁目に入力できない";
-          document.getElementById('1').value='1';
-          document.getElementById('2').value='2';
-          document.getElementById('3').value='3';
-          document.getElementById('4').value='4';
-          document.getElementById('5').value='5';
-          document.getElementById('6').value='6';
-          document.getElementById('7').value='7';
-          document.getElementById('8').value='8';
-          document.getElementById('9').value='9';
-          document.getElementById('0').value='0';
-          one.innerHTML="1";
-          two.innerHTML="2";
-          three.innerHTML="3";
-          four.innerHTML="4";
-          five.innerHTML="5";
-          six.innerHTML="6";
-          seven.innerHTML="7";
-          eight.innerHTML="8";
-          nine.innerHTML="9";
-          zero.innerHTML="×";
-          count=0;
-        }
-        function init()//初期値設定
-        {
-          one.innerHTML="1";
-          two.innerHTML="2";
-          three.innerHTML="3";
-          four.innerHTML="4";
-          five.innerHTML="5";
-          six.innerHTML="6";
-          seven.innerHTML="7";
-          eight.innerHTML="8";
-          nine.innerHTML="9";
-          zero.innerHTML="×";
-          count=0;
-          game_count=0;
-          EAT=0;
-          BYTE=0;
-          x=[];
-          x_ans=[];
-          pro1=[];
-          jud=false;
-          pro2="";
-          print_process=document.getElementById('p');
-          for(i=0;i<3;i++)
-          {
-            if(i===0)x[i]=Math.floor(Math.random()*(9-1+1))+1;
-            else x[i]=Math.floor(Math.random()*(9+1));
-            if(i===1&&x[i]===x[i-1])i--;  
-            if(i===2&&(x[i]===x[i-1]||x[i]===x[i-2]))i-=2;
-          }
-        }
-    </script>
+    <script src="./numeron_level3.js"></script>
   </body>
 </html>
