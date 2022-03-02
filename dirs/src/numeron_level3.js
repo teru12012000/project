@@ -60,8 +60,8 @@ for(i=0;i<numberLength;i++)
 //0のボタンが押せるときの処理
 const zero_button_canpush=()=>{
   $button[9].disabled=false;
-  $button[9].title='0';
-  $button[9].textContent='0';
+  $button[9].title=number[9];
+  $button[9].textContent=number[9];
 }
 
 //セッションスタート時の処理
@@ -101,12 +101,12 @@ const get_num=(num)=>{
     zero_button_canpush();
     count++;
   }
-  else if(count===1)
+  else if(count==1)
   {
     get_intext(count,num);
     count++;
   }
-  else if(count===2)
+  else if(count==2)
   {
     get_intext(count,num)        
     button_disabled();
