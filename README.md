@@ -21,6 +21,9 @@
  - パンドラボックスなどを使ってみる
  - if文の条件が長い
 
+## 改善た点
+　- スパゲッティーコードだったのを読みやすい?コードにした
+
 ## リンク
 [NUMRON](https://teru12012000.github.io/project/dirs/src/numeron.html)
 
