@@ -9,7 +9,6 @@
     <script src="https://kit.fontawesome.com/3f0abab2bc.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@800&family=Dongle:wght@700&family=Fjalla+One&display=swap" rel="stylesheet">
-
     <audio id="Sounds" preload="auto">
       <source src="../se/booon.mp3" type="audio/mp3"/>
     </audio>
@@ -28,7 +27,7 @@
       </div>
     </header>
     <div id="icons">
-      <a href="#" id="js-show-popup" class="btn fa-solid fa-question fadeAnime" alt="What is NUMERON?" onclick="autoPlay();" title="NUMERONとは"></a>
+      <a href="" id="js-show-popup" class="btn fa-solid fa-question fadeAnime" alt="What is NUMERON?" title="NUMERONとは"></a>
       <a href="./numeron_level3.html" class="btn fa-solid fa-dice-three fadeAnime" alt="standerd" onclick="audioPlay();" title="3桁の数字を当てろ！" target="_blank"></a>
       <a href="./numeron_level4.html" class="btn fa-solid fa-dice-four fadeAnime" alt="difficult" onclick="audioPlay();" title="4桁の数字を当てろ！" target="_blank"></a>
       <a href="https://github.com/teru12012000/project" class="fa-brands fa-github fadeAnime" alt="github" onclick="autoPlay();" title="githubへ(このサイトのソースコード)"></a>
@@ -57,37 +56,6 @@
       </p>
     </footer>
   </body>
-  <script>
-    Window.onload = function() {
-    let el = document.getElementById("Sounds");
-    el.play();
-    };
-  // var dicering = document.getElementById("DiceSound");
-  // dicering.volume = 0.1;
-    function audioPlay() {
-      let el = document.getElementById("sound1");
-      el.play();
-    };
-
-    function popupImage() {
-      var popup = document.getElementById('js-popup');
-      if(!popup) return;
-
-      var blackBg = document.getElementById('js-black-bg');
-      var closeBtn = document.getElementById('js-close-btn');
-      var showBtn = document.getElementById('js-show-popup');
-
-      closePopUp(blackBg);
-      closePopUp(closeBtn);
-      closePopUp(showBtn);
-      function closePopUp(elem) {
-        if(!elem) return;
-          elem.addEventListener('click', function() {
-            popup.classList.toggle('is-show');
-          });
-        }
-    }
-popupImage();
-</script>
+  <script src="./numeron.js"></script>
 <!-- 2/15: git test. -->
 </html>
