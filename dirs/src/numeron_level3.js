@@ -207,5 +207,6 @@ const get_C=()=>{
   text_reset();
   button_reset_title_and_disabled();
   init_number();
+  send_reset();
   count=0;
 }
