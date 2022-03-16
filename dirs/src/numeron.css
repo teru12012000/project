@@ -1,17 +1,40 @@
 /* numeron.css */
 
 @charset "utf-8";
-@media screen and (max-width:600px) {
+@media screen and (max-width:670px) {
   h1 {
     font-size: 500% !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
   }
   #icons {
     top: 52%;
     left: 47%;
     transform: translateY(-52%) translateX(-45%);
   }
+  #icons a {
+    font-size: 200% !important;
+    padding: 7px !important;
+  }
   footer {
     font-size: 12px !important;
+  }
+  .popup {
+    width: 50% !important;
+    height: 50% !important;
+    
+  }
+  .popup-inner {
+    position: absolute;
+    transform: translate(-50%,-50%) !important;
+    font-size: 16px !important;
+    width: 70% !important;
+    height: 75% !important;
+    padding: 40px !important;
+  }
+  .black-background {
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 
@@ -63,6 +86,7 @@ h1 {
   top: 55%;
   left: 50%;
   transform: translateY(-55%) translateX(-50%);
+  cursor: pointer;
 }
 #icons a {
   text-decoration: none;
@@ -81,6 +105,70 @@ h1 {
   color: #666;
 }
 
+footer p a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* contents of pop-up window */
+.popup {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: .6s;
+}
+/*これでうまくいった説*/
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 75%;
+  height: 75%;
+  max-width: 600px;
+  padding: 50px;
+  color: #666;
+  background-color: rgb(240, 240, 240);
+  z-index: 2;
+  overflow-y: scroll;
+}
+.popup-inner img {
+  width: 50%;
+  padding-left: 25%;
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.close-btn i {
+  font-size: 30px;
+  color: #333;
+}
+.black-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.8);
+  z-index: 1;
+  cursor: pointer;
+}
+
 .fadeAnime {
   animation-name: fadeIn;
   animation-timing-function: ease;
@@ -96,3 +184,4 @@ h1 {
     opacity: 1;
   }
 }
+
