@@ -1,4 +1,5 @@
 const $doc=document;
+let $audio=$doc.getElementsByClassName('fadeAnime');
 Window.onload = function() {
   let $el = $doc.getElementById("Sounds");
   $el.play();
@@ -33,3 +34,4 @@ Window.onload = function() {
     e.preventDefault();
   }
   popupImage();
+  for(let i=0;i<3;i++)$audio[i].addEventListener('click',()=>audioPlay());
